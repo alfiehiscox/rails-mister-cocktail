@@ -12,8 +12,18 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
+    <div class="navbar-mine">
+      <%= link_to "Home", cocktails_path, class: "my-btn" %>
+      <i class="fas fa-glass-martini-alt"></i>
+      <%= link_to "Create a Cocktail", new_cocktail_path, class: "my-btn" %>
+    </div>
+    <%= yield %>
+    <div class="footer">
+      <div class="socials">
+        <a href="https://github.com/alfiehiscox"><i class="fab fa-github"></a></i>
+        <a href="www.linkedin.com/in/alfie-h"><i class="fab fa-linkedin"></i></a>
+        <i class="fab fa-facebook-square"></i>
+      </div>
     </div>
   </body>
 </html>

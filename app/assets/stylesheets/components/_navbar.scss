@@ -10,3 +10,13 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-mine {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  font-size: 25px;
+  background-color: white;
+}
+
