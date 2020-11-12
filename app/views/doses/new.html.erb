@@ -1,7 +1,13 @@
-<h1>Create a new dose for <%= @cocktail.name %></h1>
+<div class="jumbotron jumbotron-fluid jumbotron-new-edit">
+  <h1 class="create-title">Create a new dose for <%= @cocktail.name %></h1>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+<div class="container w-50">
+    <div class="form-create">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+</div>

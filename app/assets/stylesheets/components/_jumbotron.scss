@@ -1,4 +1,4 @@
-.jumbotron-edit {
+.jumbotron-index-edit {
   height: 60vh;
   padding: 120px 0;
   background-image: asset-url('header-2.jpg');
@@ -7,6 +7,18 @@
   color: white;
 }
 
-// .jumbo-title {
-//   color: white;
-// }
+.jumbotron-new-edit {
+  padding: 120px 0;
+  height: 50vh;
+  color: white;
+  background-image: asset-url('header-3.jpg');
+  background-size: cover;
+}
+
+.jumbotron-show-edit {
+  padding: 120px 0;
+  height: 50vh;
+  color: white;
+  background-image: asset-url('header-4.jpg');
+  background-size: cover;
+}

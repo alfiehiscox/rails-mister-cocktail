@@ -5,3 +5,15 @@
   background-color: white;
 }
 
+.ingredient_card {
+  padding: 0;
+  margin: 30px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.ingredients {
+  padding: 20px;
+}

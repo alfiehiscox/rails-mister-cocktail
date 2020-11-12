@@ -1,8 +1,17 @@
-<h1><%= @cocktail.name %></h1>
+<div class="jumbotron jumbotron-fluid jumbotron-show-edit">
+  <h1 class="create-title"><%= @cocktail.name %></h1>
+</div>
 
-<% @cocktail.doses.each do |dose| %>
-  <p> <%= dose.description %> - <%= dose.ingredient.name %></p>
-<% end %>
+<div class="container w-50">
+  <h3><%= @cocktail.name %></h3>
+  <div class="ingredient_card">
+    <div class="ingredients">
+      <p><strong>Ingredients</strong></p>
+      <% @cocktail.doses.each do |dose| %>
+        <p> <%= dose.description %> - <%= dose.ingredient.name %></p>
+      <% end %>
+    </div>
+    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary show-btn" %>
+  </div>
+</div>
 
-<%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary" %>
-<%= link_to "Homepage", cocktails_path, class: "btn btn-primary" %>
