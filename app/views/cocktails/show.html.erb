@@ -2,16 +2,30 @@
   <h1 class="create-title"><%= @cocktail.name %></h1>
 </div>
 
-<div class="container w-50">
-  <h3><%= @cocktail.name %></h3>
-  <div class="ingredient_card">
-    <div class="ingredients">
-      <p><strong>Ingredients</strong></p>
-      <% @cocktail.doses.each do |dose| %>
-        <p> <%= dose.description %> - <%= dose.ingredient.name %></p>
+<div class="my-container w-50">
+  <div class="d-flex justify-content-between align-items-center">
+    <h3><%= @cocktail.name %></h3>
+    <%= link_to "Delete", cocktail_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-del" %>
+  </div>
+
+  <div class="info-card">
+    <div class="individual-image-card">
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <div class="card-image-empty">No Photo Provided</div>
       <% end %>
     </div>
-    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary show-btn" %>
+
+    <div class="ingredient_card">
+      <div class="ingredients">
+        <p><strong>Ingredients</strong></p>
+        <% @cocktail.doses.each do |dose| %>
+          <p> <%= dose.description %> - <%= dose.ingredient.name %></p>
+        <% end %>
+      </div>
+      <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary show-btn" %>
+    </div>
   </div>
 </div>
 

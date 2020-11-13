@@ -33,3 +33,24 @@ p {
     }
   }
 }
+
+@media(max-width: 992px) {
+  .cocktail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media(max-width: 768px) {
+  .cocktail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width: 573px) {
+  .cocktail-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

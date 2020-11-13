@@ -10,8 +10,11 @@
   <div class="cocktail-grid">
     <% @cocktails.each do |cocktail| %>
       <div class="card cocktail-card">
-        <%#= image_tag "drink-#{rand(1..3)}", alt: "picture of a drink", width: 300, class: "card-img-top" %>
-        <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if cocktail.photo.attached? %>
+          <div class="card-image" style="background-image: url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')" ></div>
+        <% else %>
+          <div class="card-image-empty">No Photo Provided</div>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><strong> <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></strong></h5>
             <p><em>Ingredients</em></p>

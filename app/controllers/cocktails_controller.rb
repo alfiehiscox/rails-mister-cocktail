@@ -1,7 +1,6 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
-    @img_number = rand(1..4)
   end
 
   def create
@@ -15,6 +14,12 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+  end
+
+  def destroy
+    cocktail = Cocktail.find(params[:id])
+    cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private

@@ -2,11 +2,11 @@
   <h1 class="create-title">Create a new dose for <%= @cocktail.name %></h1>
 </div>
 
-<div class="container w-50">
+<div class="my-container w-50">
     <div class="form-create">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :description %>
         <%= f.association :ingredient %>
+        <%= f.input :description %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
     </div>
