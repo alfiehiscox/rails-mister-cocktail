@@ -27,5 +27,14 @@
       <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary show-btn" %>
     </div>
   </div>
+
+  <div class="description-card">
+    <% if @cocktail.description.nil? %>
+      <%= link_to "Create a discription", edit_cocktail_path(@cocktail.id), class: "btn btn-primary" %>
+    <% else %>
+      <p>Description</p>
+      <%= @cocktail.description %>
+    <% end %>
+  </div>
 </div>
 

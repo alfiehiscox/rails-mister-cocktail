@@ -56,6 +56,17 @@
   margin: 50px auto 100px auto;
 }
 
+.description-card {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 7px rgb(209, 209, 209);
+
+  a {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
 @media(max-width: 768px) {
   .info-card {
     width: 90vw;
