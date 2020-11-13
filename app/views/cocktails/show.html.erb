@@ -32,8 +32,10 @@
     <% if @cocktail.description.nil? %>
       <%= link_to "Create a discription", edit_cocktail_path(@cocktail.id), class: "btn btn-primary" %>
     <% else %>
-      <p>Description</p>
-      <%= @cocktail.description %>
+      <div class="p-4">
+        <p><strong>Description</strong></p>
+        <p><%= @cocktail.description %></p>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,4 +1,25 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :description %>
-  <%= f.submit "Update description" %>
-<% end %>
+<div class="jumbotron jumbotron-fluid jumbotron-new-edit">
+  <h1 class="create-title">Add a Description</h1>
+</div>
+
+
+<div class="my-container">
+  <div class="create_description_card">
+    <div class="create-form">
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :description, label: "How do you make this drink?" %>
+        <%= f.submit "Update description", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+    <div class="ingredient_card">
+      <div class="ingredients">
+        <p><strong>Ingredients</strong></p>
+        <% @cocktail.doses.each do |dose| %>
+          <p> <%= dose.description %> - <%= dose.ingredient.name %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
